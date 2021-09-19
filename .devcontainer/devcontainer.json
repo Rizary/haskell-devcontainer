@@ -1,0 +1,54 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
+// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/docker-existing-dockerfile
+{
+    "name": "workspace-docker-compose-with-flakes",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+    // "runArgs": [
+    //     // "-u",
+    //     // "vscode",
+    //     "--cap-add=SYS_PTRACE",
+    //     "--security-opt",
+    //     "seccomp=unconfined"
+    // ],
+    "userEnvProbe": "loginInteractiveShell",
+
+    "settings": { 
+      "terminal.integrated.defaultProfile.linux": "bash",
+      "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
+      "haskell.plugin.ghcide-hover-and-symbols.hoverOn": true,
+      "haskell.plugin.hlint.diagnosticsOn": true,
+      "haskell.plugin.haddockComments.globalOn": false,
+      "haskell.plugin.retrie.globalOn": false,
+      "haskell.formattingProvider": "ormolu",
+      "haskell.logFile": "/workspace/hls.log",
+      "[haskell]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+      },
+    },
+  
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+      "bbenoist.nix",
+      "arrterian.nix-env-selector",
+      "justusadam.language-haskell",
+      "haskell.haskell",
+    ],
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [],
+    // "waitFor": "postCreateCommand",
+  
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "nix develop",// ["eval","\"$(nix print-dev-env)\""],
+    
+  
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "plutus",
+    "updateRemoteUserUID": false
+  }

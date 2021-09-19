@@ -1,0 +1,24 @@
+version: '3'
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.flake
+    #   args:
+    #     USER_UID: ${USER_UID:-1000}
+    #     USER_GID: ${USER_GID:-1000}
+    #     PROJECT_DIR: /workspace
+    environment:
+      PATH: /home/plutus/.nix-profile/bin:/home/plutus/.local/bin:/usr/local/bin:/usr/bin:/bin
+    # command: sleep infinity
+    volumes:
+      - .:/workspace:cached
+      - nix:/nix
+      - direnv-allow:/home/plutus/.local/share/direnv/allow
+    security_opt:
+      - label:disable
+    network_mode: bridge
+
+volumes:
+  nix:
+  direnv-allow:

@@ -1,0 +1,4 @@
+-- Specifies where the Cabal packages for our project are located.
+packages:
+    ./backend
+with-compiler: /opt/ghc/8.10.4/bin/ghc

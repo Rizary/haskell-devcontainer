@@ -1,0 +1,3 @@
+FROM inputoutput/plutus-starter-devcontainer:latest
+
+# RUN apt -y install --no-install-recommends libssl-dev

@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    # - path: "./backend/src"
+    #   component: "lib:haskell-language-server"
+    - path: "./backend/"
+      component: "backend:exe:backend"
