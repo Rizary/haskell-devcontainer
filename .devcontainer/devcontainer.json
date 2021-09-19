@@ -1,5 +1,3 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
-// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/docker-existing-dockerfile
 {
     "name": "workspace-docker-compose-with-flakes",
     "dockerComposeFile": "../docker-compose.yml",
@@ -14,7 +12,7 @@
     // ],
     "userEnvProbe": "loginInteractiveShell",
 
-    "settings": { 
+    "settings": {
       "terminal.integrated.defaultProfile.linux": "bash",
       "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
       "haskell.plugin.ghcide-hover-and-symbols.hoverOn": true,
@@ -49,6 +47,6 @@
     
   
     // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "plutus",
+    "remoteUser": "user",
     "updateRemoteUserUID": false
   }

@@ -1,0 +1,2 @@
+2021-09-19 14:41:14.133521763 [ThreadId 5] INFO hls:	Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri 6384748390871118630 "file:///workspace"], clientSettings = hashed Nothing}
+2021-09-19 14:42:43.23877354 [ThreadId 5] INFO hls:	Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri 6384748390871118630 "file:///workspace"], clientSettings = hashed Nothing}
