@@ -3,7 +3,7 @@ let
   noCheck = p: final.haskell.lib.dontCheck p;
   noHaddock = p: final.haskell.lib.dontHaddock p;
   fast = p: noHaddock (noCheck p);
-  ghcVer = "ghc884";
+  ghcVer = "ghc8107";
 in {
   myApp = rec {
     haskellPkg = prev.haskell.packages.${ghcVer}.extend (self: super: {
@@ -11,7 +11,7 @@ in {
     });
     nix = prev.callPackage ./. { };
     haskellPackages = prev.haskell.packages // {
-      ghc884 = haskellPkg;
+      ghc8107 = haskellPkg;
     };
   };
 }

@@ -6,12 +6,14 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.devshell.url = "github:numtide/devshell/master";
 
+  # Haskell dependencies
+  inputs.haskell-language-server.url = "github:haskell/haskell-language-server";
   # Rust dependencies
   inputs.naersk.url = "github:nmattia/naersk";
   inputs.naersk.inputs.nixpkgs.follows = "nixpkgs";
   inputs.rust-overlay.url = "github:oxalica/rust-overlay";
 
-  outputs = { self, nixpkgs, naersk, flake-utils, devshell, rust-overlay }:
+  outputs = { self, nixpkgs, haskell-language-server, naersk, flake-utils, devshell, rust-overlay }:
     {
       overlay = import ./nix/overlay.nix;
     } //
@@ -28,6 +30,7 @@
               ];
             };
             overlays = [
+              haskell-language-server.overlay
               rust-overlay.overlay
               devshell.overlay
               naersk.overlay
@@ -40,7 +43,7 @@
 
           packages = flake-utils.lib.flattenTree pkgs.myApp;
 
-          devShell = import ./nix/devshell.nix { inherit pkgs; };
+          devShell = import ./nix/devshell.nix { inherit pkgs haskell-language-server; };
 
           checks = { };
         }

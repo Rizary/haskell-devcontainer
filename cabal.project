@@ -1,5 +1,6 @@
 -- Specifies where the Cabal packages for our project are located.
-packages:
-    ./backend
+-- with-compiler: ghc.exe
 with-compiler: ghc
 compiler: ghc
+packages:
+    ./backend
