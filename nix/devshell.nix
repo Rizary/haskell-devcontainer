@@ -18,7 +18,7 @@ pkgs.devshell.mkShell {
     
     ## Haskell
     pkgs.myApp.haskellPackages.ghc884.cabal-install
-    pkgs.myApp.haskellPackages.ghc884.haskell-language-server
+    # pkgs.myApp.haskellPackages.ghc884.haskell-language-server
     pkgs.myApp.haskellPackages.ghc884.ghc
     pkgs.myApp.haskellPackages.ghc884.ghcide
     pkgs.myApp.haskellPackages.ghc884.ormolu

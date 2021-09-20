@@ -43,7 +43,7 @@
     // "waitFor": "postCreateCommand",
   
     // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "nix develop",// ["eval","\"$(nix print-dev-env)\""],
+    "postCreateCommand": "sudo chown -R user:user ~/.local/share && direnv allow && cabal update",// ["eval","\"$(nix print-dev-env)\""],
     
   
     // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
