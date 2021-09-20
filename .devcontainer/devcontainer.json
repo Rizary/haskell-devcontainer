@@ -22,7 +22,8 @@
       "haskell.formattingProvider": "ormolu",
       "haskell.logFile": "/workspace/hls.log",
       "remote.extensionKind": {
-        "haskell.haskell":["workspace"],
+        // "haskell.haskell": "workspace",
+        // "justusadam.language-haskell": "workspace",
       },
       "[haskell]": {
         "editor.formatOnSave": true,

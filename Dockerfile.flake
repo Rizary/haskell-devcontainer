@@ -72,3 +72,9 @@ ONBUILD VOLUME /nix
 # create volume for direnv
 ONBUILD RUN sudo -u user mkdir -p /home/${USERNAME}/.config/direnv/allow
 ONBUILD VOLUME /home/${USERNAME}/.config/direnv/allow
+
+ENV PATH=/home/$USER/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+ENTRYPOINT [ "/bin/bash", "--login", "-c", "exec \"$@\"", "argv0" ]
+
+CMD ["/bin/bash"]
