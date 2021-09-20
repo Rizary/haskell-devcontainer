@@ -10,6 +10,7 @@ services:
         PROJECT_DIR: /workspace
     environment:
       PATH: /home/user/.nix-profile/bin:/home/user/.local/bin:/usr/local/bin:/usr/bin:/bin
+    command: sleep infinity
     volumes:
       - .:/workspace:cached
       - nix:/nix
