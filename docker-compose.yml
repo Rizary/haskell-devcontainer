@@ -3,13 +3,13 @@ services:
   dev:
     build:
       context: .
-      dockerfile: Dockerfile.flake
+      dockerfile: Dockerfile.ubuntu
       args:
         USER_UID: ${USER_UID:-1000}
         USER_GID: ${USER_GID:-1000}
         PROJECT_DIR: /workspace
     environment:
-      PATH: /home/user/.nix-profile/bin:/home/user/.local/bin:/usr/local/bin:/usr/bin:/bin
+      PATH: /opt/ghc/bin:/home/user/.nix-profile/bin:/home/user/.local/bin:/usr/local/bin:/usr/bin:/bin
     command: sleep infinity
     volumes:
       - .:/workspace:cached
