@@ -2,7 +2,7 @@
     "name": "workspace-docker-compose-with-flakes",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "dev",
-    "workspaceFolder": "/workspace",
+    "workspaceFolder": "/home/user/workspace",
     // "runArgs": [
     //     // "-u",
     //     // "vscode",
@@ -20,7 +20,7 @@
       "haskell.plugin.haddockComments.globalOn": false,
       "haskell.plugin.retrie.globalOn": false,
       "haskell.formattingProvider": "ormolu",
-      "haskell.logFile": "/workspace/hls.log",
+      "haskell.logFile": "/home/user/workspace/hls.log",
       "remote.extensionKind": {
         "haskell.haskell": "workspace",
         "justusadam.language-haskell": "workspace",

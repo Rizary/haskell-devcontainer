@@ -1,5 +1,5 @@
+index-state: 2021-09-26T00:00:00Z
 -- Specifies where the Cabal packages for our project are located.
--- with-compiler: ghc.exe
 with-compiler: ghc
 compiler: ghc
 packages:

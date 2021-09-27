@@ -1,4 +1,4 @@
-{ pkgs, haskell-language-server }:
+{ pkgs }:
 
 pkgs.devshell.mkShell {
   name = "rizary-haskell";
@@ -12,20 +12,21 @@ pkgs.devshell.mkShell {
   packages = [
     # build tools
     ## Rust
-    # pkgs.rust-pl.nix.rustOverlay
 
     # pkgs.rust-analyzer
     
     ## Haskell
-    pkgs.myApp.haskellPackages.ghc8107.cabal-install
-    haskell-language-server.packages.x86_64-linux.haskell-language-server-8107
-    pkgs.myApp.haskellPackages.ghc8107.ghc
+    # pkgs.myApp.helloProject.hsPkgs.haskell-language-server:exe:haskell-language-server
+    # pkgs.myApp.haskellPackages.ghc8107.cabal-install
+    # haskell-language-server.packages.x86_64-linux.haskell-language-server-8107
+    # pkgs.myApp.haskellPackages.ghc8107.ghc
+    # pkgs.myApp.haskellPackages.ghc8107.ghcid
 
     # Nix code formatter
     pkgs.binutils
     pkgs.pkgconfig
-    pkgs.gcc
-    pkgs.glibc
+    # pkgs.gcc
+    # pkgs.glibc
     pkgs.nixpkgs-fmt
     pkgs.lldb
   ];

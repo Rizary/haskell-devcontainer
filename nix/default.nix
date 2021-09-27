@@ -1,4 +1,4 @@
-{ pkgs }:
+{ }:
 {
-#   backend = pkgs.callPackage ./backend { };
+  backend = import ./backend { };
 }

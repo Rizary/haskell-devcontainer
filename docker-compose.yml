@@ -7,12 +7,13 @@ services:
       args:
         USER_UID: ${USER_UID:-1000}
         USER_GID: ${USER_GID:-1000}
-        PROJECT_DIR: /workspace
+        PROJECT_DIR: /home/user/workspace
+
     environment:
-      PATH: /opt/ghc/bin:/home/user/.nix-profile/bin:/home/user/.local/bin:/usr/local/bin:/usr/bin:/bin
+      PATH: /home/user/.nix-profile/bin:/home/user/.local/bin:/usr/local/bin:/usr/bin:/bin
     command: sleep infinity
     volumes:
-      - .:/workspace:cached
+      - .:/home/user/workspace:cached
       - nix:/nix
       - direnv-allow:/home/user/.local/share/direnv/allow
     security_opt:

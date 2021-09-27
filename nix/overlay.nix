@@ -6,12 +6,13 @@ let
   ghcVer = "ghc8107";
 in {
   myApp = rec {
-    haskellPkg = prev.haskell.packages.${ghcVer}.extend (self: super: {
-        # hls-call-hierarchy-plugin = self.callHackage "hls-call-hierarchy-plugin" "1.0.0.0" { };
-    });
+    helloProject = ((final.haskell-nix.project ((import ./. { }).backend)).flake {});
+    # haskellPkg = prev.haskell.packages.${ghcVer}.extend (self: super: {
+    #     # hls-call-hierarchy-plugin = self.callHackage "hls-call-hierarchy-plugin" "1.0.0.0" { };
+    # });
     nix = prev.callPackage ./. { };
-    haskellPackages = prev.haskell.packages // {
-      ghc8107 = haskellPkg;
-    };
+    # haskellPackages = prev.haskell.packages // {
+    #   ghc8107 = haskellPkg;
+    # };
   };
 }

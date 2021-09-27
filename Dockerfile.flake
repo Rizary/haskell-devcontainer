@@ -1,1 +1,3 @@
 FROM xtruder/debian-nix-devcontainer:flakes
+
+COPY nix.conf /etc/nix/nix.conf

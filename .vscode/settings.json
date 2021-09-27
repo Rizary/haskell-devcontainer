@@ -1,5 +1,6 @@
 {
     "haskell.trace.server": "messages",
     "haskell.trace.client": "debug",
-    "haskell.logFile": "/workspace/rizary-haskell/hls.log"
+    "haskell.logFile": "/home/user/workspace/hls.log",
+    "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"
 }
